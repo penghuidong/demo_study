@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Reflection;
 
 public class FPS1 : MonoBehaviour
 {
@@ -29,6 +31,17 @@ public class FPS1 : MonoBehaviour
             frames = 0;
             postTime = 0;
         }
+
+        //Type type = Type.GetType("Mono.Runtime");
+        //if (type != null)
+        //{
+        //    MethodInfo displayName = type.GetMethod("GetDisplayName", BindingFlags.NonPublic | BindingFlags.Static);
+        //    if (displayName != null)
+        //    {
+        //      打印mono版本
+        //        Debug.Log("------------------" + displayName.Invoke(null, null));
+        //    }
+        //}
     }
 
     private void OnGUI()
