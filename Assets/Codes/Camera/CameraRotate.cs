@@ -23,8 +23,7 @@ public class CameraRotate : MonoBehaviour
 
         transform.position = player.position + offset;
 
-        /* solution 1 ----------------------- begin
- 
+        // solution 1 ----------------------- begin
         float mx = Input.GetAxis("Mouse X");
         float my = -Input.GetAxis("Mouse Y");   // 这里为啥要去负
 
@@ -40,9 +39,9 @@ public class CameraRotate : MonoBehaviour
             transform.RotateAround(player.transform.position, transform.right, my * speed);
         }
         // solution 1 ----------------------- end  
-        */
+        
 
-        // solution 2 ------------------------- begin
+        /* solution 2 ------------------------- begin
         // button 值为 0 表示左按钮，1 表示右按钮，2 表示中间按钮。按下鼠标按钮时返回 true，释放时返回 false。
         if ( Input.GetMouseButton(0) )
         {
@@ -66,7 +65,7 @@ public class CameraRotate : MonoBehaviour
 
             offset = transform.position - player.position;
         }
-        // Solution 2 -----------------------------------end
+        // Solution 2 -----------------------------------end */
     }
 }
 

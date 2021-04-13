@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Player Start");
+        var netManager = GetComponent<NetworkManager>();
+        if ( netManager != null )
+        {
+            netManager.playerPrefab = null;
+        }
+        else
+        {
+            Debug.Log("NetworkManager Is Null");
+        }
     }
 
     // Update is called once per frame
