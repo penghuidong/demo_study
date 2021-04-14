@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class CameraRotate : MonoBehaviour
+public class CameraRotate : NetworkBehaviour
 {
     public float speed = 7.0f;
     public Transform player;
@@ -15,6 +16,10 @@ public class CameraRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ( !isLocalPlayer )
+        {
+            return;
+        }
         if (player == null)
         {
             Debug.Log("player Transform is null");
